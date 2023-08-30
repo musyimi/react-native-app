@@ -5,14 +5,14 @@ class Gadget {
         imageUrl,
         price,
         shortDescription,
-        categoryId
+        categoryIds
     ) {
         this.id = id;
         this.title = title;
         this.imageUrl = imageUrl;
         this.price = price;
         this.shortDescription = shortDescription;
-        this.categoryId
+        this.categoryIds = categoryIds;
     }
 }
 
