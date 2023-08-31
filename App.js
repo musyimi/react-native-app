@@ -8,8 +8,22 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import GadgetOverviewScreen from './screens/GadgetOverviewScreen';
 import GadgetDetailsScreen from './screens/GadgetDetailsScreen';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator screenOptions={{
+          headerStyle: { backgroundColor: '#4C2719'},
+          headerTintColor: 'white',
+          sceneContainerStyle: { backgroundColor: '#330036'},
+    }}>
+      <Drawer.Screen name="Categories" component={CategoriesScreen} />
+    </Drawer.Navigator>
+  );
+}
 
 export default function App() {
   return (
@@ -25,10 +39,10 @@ export default function App() {
         }}
       >
         <Stack.Screen 
-           name="Categories" 
-           component={CategoriesScreen} 
+           name="All Categories" 
+           component={DrawerNavigator} 
            options={{
-            title: 'All Categories',
+            headerShown: false
             
            }}/>
         <Stack.Screen name="Overview" component={GadgetOverviewScreen} />
